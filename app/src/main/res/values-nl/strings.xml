@@ -175,4 +175,5 @@
     <string name="toast_freeze_frame_added_to_sequence">Freeze-frame aan tijdlijn toegevoegd</string>
     <string name="toast_failed_to_create_freeze_frame">Kon freeze-frame niet maken</string>
     <string name="str_overlay">Overlay</string>
+<string name="str_ducking">Ducking</string>
 </resources>
