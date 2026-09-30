@@ -176,4 +176,5 @@
     <string name="str_haptic_feedback">हैप्टिक फ़ीडबैक</string>
     <string name="str_haptic_enabled_desc">सक्षम (इन-ऐप कंपन सक्रिय)</string>
     <string name="str_haptic_disabled_desc">अक्षम (इन-ऐप कंपन बंद)</string>
+    <string name="str_under_construction">Under Construction</string>
 </resources>
