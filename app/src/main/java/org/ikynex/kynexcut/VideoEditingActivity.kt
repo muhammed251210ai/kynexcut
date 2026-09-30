@@ -4907,7 +4907,7 @@ class VideoEditingActivity : AppCompatActivity() {
 
         sheetView.findViewById<View>(R.id.btnSaveProject)?.setBounceClickListener {
             bottomSheetDialog.dismiss()
-            saveProjectLauncher.launch("project.lcprj")
+            saveProjectLauncher.launch("project.ikx")
         }
 
         bottomSheetDialog.setContentView(sheetView)
@@ -7947,7 +7947,7 @@ class VideoEditingActivity : AppCompatActivity() {
         view.findViewById<com.google.android.material.button.MaterialButton>(R.id.btnSaveAndQuit).setBounceClickListener {
             bottomSheet.dismiss()
             shouldQuitAfterSave = true
-            saveProjectLauncher.launch("project.lcprj")
+            saveProjectLauncher.launch("project.ikx")
         }
 
         view.findViewById<com.google.android.material.button.MaterialButton>(R.id.btnKeepEditing).setBounceClickListener {
