@@ -176,4 +176,5 @@
     <string name="str_haptic_feedback">ردود الفعل اللمسية</string>
     <string name="str_haptic_enabled_desc">مُفعّل (الاهتزازات داخل التطبيق نشطة)</string>
     <string name="str_haptic_disabled_desc">معطل (تم كتم الاهتزازات داخل التطبيق)</string>
+    <string name="str_under_construction">Under Construction</string>
 </resources>
