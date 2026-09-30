@@ -176,4 +176,5 @@
     <string name="str_haptic_feedback">ஹாப்டிக் பின்னூட்டம்</string>
     <string name="str_haptic_enabled_desc">இயக்கப்பட்டது (பயன்பாட்டு அதிர்வுகள் செயலில் உள்ளன)</string>
     <string name="str_haptic_disabled_desc">முடக்கப்பட்டது (பயன்பாட்டு அதிர்வுகள் முடக்கப்பட்டுள்ளன)</string>
+    <string name="str_under_construction">Under Construction</string>
 </resources>
