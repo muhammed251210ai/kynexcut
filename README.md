@@ -1,38 +1,38 @@
-# LibreCuts
+# KynexCut
 
 <div align="center">
-  <img src="src/images/featureGraphic.png" alt="LibreCuts Banner" width="100%"/>
+  <img src="src/images/featureGraphic.png" alt="KynexCut Banner" width="100%"/>
   <br/>
   <br/>
 
-  <a href="https://github.com/sponsors/tharunbirla">
-    <img src="https://img.shields.io/badge/Sponsor_LibreCuts-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" height="35" alt="Sponsor tharunbirla" />
+  <a href="https://github.com/sponsors/ikynex">
+    <img src="https://img.shields.io/badge/Sponsor_KynexCut-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" height="35" alt="Sponsor ikynex" />
   </a>
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" height="35" alt="License" />
   </a>
   <br/>
   <br/>
-  <a href="https://github.com/tharunbirla/LibreCuts/releases/latest">
+  <a href="https://github.com/ikynex/KynexCut/releases/latest">
     <img src="src/images/badges/badge_github.png" alt="Get it on GitHub" height="96" />
   </a>
-  <a href="https://f-droid.org/packages/com.tharunbirla.librecuts/">
+  <a href="https://f-droid.org/packages/com.ikynex.kynexcut/">
     <img src="src/images/badges/badge_fdroid.png" alt="Get it on F-Droid" height="96" />
   </a>
-  <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/tharunbirla/LibreCuts">
+  <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/ikynex/KynexCut">
     <img src="src/images/badges/badge_obtainium.png" height="96" alt="Get it on Obtainium" />
   </a>
   <a href="https://discord.gg/gwr3nE7YW">
     <img src="src/images/badges/badge_discord.png" height="96" alt="Join Discord" />
   </a>
-  <a href="https://hosted.weblate.org/engage/librecuts/">
-    <img src="https://hosted.weblate.org/widget/librecuts/librecuts/287x66-grey.png" height="96" alt="Translation status" />
+  <a href="https://hosted.weblate.org/engage/kynexcut/">
+    <img src="https://hosted.weblate.org/widget/kynexcut/kynexcut/287x66-grey.png" height="96" alt="Translation status" />
   </a>
 </div>
 
 <br/>
 
-**LibreCuts** is a free, open-source video editor for Android that prioritizes simplicity, efficiency, and privacy. Built for seamless performance, it empowers creators to easily select, edit, and export watermark-free videos locally on their device.
+**KynexCut** is a free, open-source video editor for Android that prioritizes simplicity, efficiency, and privacy. Built for seamless performance, it empowers creators to easily select, edit, and export watermark-free videos locally on their device.
 
 ---
 
@@ -66,7 +66,7 @@ Help resist this gatekeeping and support the movement at [keepandroidopen.org](h
 - **Canvas Background** - Add a blurred background or a solid color for a cohesive look when your video aspect ratio does not match the project frame.
 - **Reverse** - Reverse video playback.
 - **Timeline Organization** - Enhanced editing with snapping functionality, overlay duplication, freeze frame actions, and improved UI visual styling.
-- **Project Save & Import** - Save non-destructive project state as a `.lcprj` file to save and reopen editable project files anytime.
+- **Project Save & Import** - Save non-destructive project state as a `.ikx` file to save and reopen editable project files anytime.
 - **Freehand Drawing** - Draw directly on top of video clips with custom brush color and stroke controls.
 - **Custom Fonts** - Import `.ttf` or `.otf` font files to customize text overlay typography.
 - **Fullscreen Preview** - Switch to true fullscreen preview mode with expanded timeline view and overlay controls.
@@ -92,17 +92,17 @@ Help resist this gatekeeping and support the movement at [keepandroidopen.org](h
   </table>
 </div>
 
-## 💖 Support LibreCuts
+## 💖 Support KynexCut
 
-LibreCuts is built with passion and provided to the community for free. If this app has helped you create amazing videos, consider supporting its continued development! Your sponsorship helps keep the project alive and growing.
+KynexCut is built with passion and provided to the community for free. If this app has helped you create amazing videos, consider supporting its continued development! Your sponsorship helps keep the project alive and growing.
 
 <div align="center">
   <br/>
-  <a href="https://github.com/sponsors/tharunbirla"><img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=%23EA4AAA" alt="GitHub Sponsors" /></a>
+  <a href="https://github.com/sponsors/ikynex"><img src="https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=%23EA4AAA" alt="GitHub Sponsors" /></a>
   &nbsp;&nbsp;
-  <a href="https://www.patreon.com/tharunbirla"><img src="https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white" alt="Patreon" /></a>
+  <a href="https://www.patreon.com/ikynex"><img src="https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white" alt="Patreon" /></a>
   &nbsp;&nbsp;
-  <a href="https://ko-fi.com/tharunbirla"><img src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Ko-Fi" /></a>
+  <a href="https://ko-fi.com/ikynex"><img src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Ko-Fi" /></a>
   <br/>
   <br/>
 </div>
@@ -118,7 +118,7 @@ LibreCuts is built with passion and provided to the community for free. If this 
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/tharunbirla/LibreCuts.git
+   git clone https://github.com/ikynex/KynexCut.git
    ```
 2. **Open the project in Android Studio**:
    - Launch Android Studio and select "Open an existing Android Studio project."
@@ -131,7 +131,7 @@ LibreCuts is built with passion and provided to the community for free. If this 
 
 ## 🔒 Permissions
 
-LibreCuts requires the following permissions to function properly:
+KynexCut requires the following permissions to function properly:
 
 - **READ_EXTERNAL_STORAGE**: To read videos from the device.
 - **WRITE_EXTERNAL_STORAGE**: (For older Android versions) To save edited videos.
@@ -141,7 +141,7 @@ LibreCuts requires the following permissions to function properly:
 ## 🔧 Troubleshooting & Support
 
 If you encounter any export failures, codec errors, or unexpected crashes during your editing workflow:
-- Refer to our comprehensive [Error Codes & Troubleshooting Guide](https://github.com/tharunbirla/LibreCuts/wiki/Error-Codes-&-Troubleshooting) on the Wiki.
+- Refer to our comprehensive [Error Codes & Troubleshooting Guide](https://github.com/ikynex/KynexCut/wiki/Error-Codes-&-Troubleshooting) on the Wiki.
 - Join our [Discord Community](https://discord.gg/gwr3nE7YW) for real-time support, suggestions, and app updates.
 
 ## 🤝 Contributing
