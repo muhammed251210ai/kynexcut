@@ -176,4 +176,5 @@
 <string name="str_haptic_feedback">Haptic Feedback</string>
 <string name="str_haptic_enabled_desc">Enabled (In-app vibrations active)</string>
 <string name="str_haptic_disabled_desc">Disabled (In-app vibrations muted)</string>
+    <string name="str_under_construction">Under Construction</string>
 </resources>
