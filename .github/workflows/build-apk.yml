@@ -25,13 +25,16 @@ jobs:
 
     - name: Anahtarı Kasadan Çöz ve key.properties Üret
       env:
-        KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
-        KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
-        KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
+        SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
+        KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+        KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
       run: |
-        echo "$KEYSTORE_BASE64" | base64 -d > ikynex-release-key.jks
+        printf "%s" "$SIGNING_KEY" | base64 --decode > ikynex-release-key.jks
+        test -s ikynex-release-key.jks
+        keytool -list -keystore ikynex-release-key.jks -storepass "$KEYSTORE_PASSWORD" >/dev/null
         cat << EOC > key.properties
-        storePassword=$KEY_PASSWORD
+        storePassword=$KEYSTORE_PASSWORD
         keyPassword=$KEY_PASSWORD
         keyAlias=$KEY_ALIAS
         storeFile=../ikynex-release-key.jks
