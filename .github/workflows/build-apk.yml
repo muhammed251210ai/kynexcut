@@ -29,6 +29,7 @@ jobs:
         KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
         KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
       run: |
+        set -euo pipefail
         printf "%s" "$KEYSTORE_BASE64" | base64 --decode > ikynex-release-key.jks
         test -s ikynex-release-key.jks
         keytool -list -keystore ikynex-release-key.jks -storepass "$KEY_PASSWORD" >/dev/null
@@ -44,12 +45,17 @@ jobs:
 
     - name: Google Console için SHA-256 Parmak İzini Göster
       shell: bash
+      env:
+        KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
+        KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
       run: |
         set -euo pipefail
-        APK="$(find app/build/outputs/apk/release -maxdepth 1 -type f -name '*.apk' | head -n 1)"
-        test -n "$APK"
-        echo "APK: $APK"
-        keytool -printcert -jarfile "$APK" | grep -E 'SHA256:|SHA-256:'
+        echo "İmzalama sertifikasının SHA-256 parmak izi:"
+        keytool -list -v \
+          -keystore ikynex-release-key.jks \
+          -alias "$KEY_ALIAS" \
+          -storepass "$KEY_PASSWORD" \
+          | grep -E 'SHA256:|SHA-256:'
 
     - name: APK Dosyasını Yükle (Artifact)
       uses: actions/upload-artifact@v4
