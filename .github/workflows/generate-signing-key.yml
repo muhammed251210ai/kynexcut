@@ -1,0 +1,66 @@
+name: Generate KynexCut Signing Key
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create release signing material
+        shell: bash
+        env:
+          BUNDLE_PASSWORD: ${{ secrets.SIGNING_SETUP_ENCRYPTION_PASSWORD }}
+        run: |
+          set -euo pipefail
+          if [ -z "${BUNDLE_PASSWORD:-}" ]; then
+            echo "Missing SIGNING_SETUP_ENCRYPTION_PASSWORD Actions secret."
+            echo "Create it first with a long, unique password, then rerun this workflow."
+            exit 1
+          fi
+
+          STORE_PASSWORD="$(openssl rand -hex 32)"
+          KEY_ALIAS="kynexcut-release"
+
+          keytool -genkeypair \
+            -alias "$KEY_ALIAS" \
+            -keyalg RSA \
+            -keysize 3072 \
+            -validity 10000 \
+            -keystore kynexcut-release.jks \
+            -storetype JKS \
+            -storepass "$STORE_PASSWORD" \
+            -keypass "$STORE_PASSWORD" \
+            -dname "CN=KynexCut, OU=Release, O=iKynex, C=TR"
+
+          keytool -list -keystore kynexcut-release.jks -storepass "$STORE_PASSWORD" >/dev/null
+          mkdir signing-setup
+          base64 -w 0 kynexcut-release.jks > signing-setup/KEYSTORE_BASE64.txt
+          printf '%s' "$STORE_PASSWORD" > signing-setup/RELEASE_KEY_PASSWORD.txt
+          printf '%s' "$KEY_ALIAS" > signing-setup/RELEASE_KEY_ALIAS.txt
+          cat > signing-setup/README.txt <<'EOF'
+          KynexCut signing setup.
+          Add these values in Settings > Secrets and variables > Actions:
+          KEYSTORE_BASE64 = complete one-line content of KEYSTORE_BASE64.txt
+          RELEASE_KEY_PASSWORD = complete content of RELEASE_KEY_PASSWORD.txt
+          RELEASE_KEY_ALIAS = complete content of RELEASE_KEY_ALIAS.txt
+          Keep these values private. Do not commit them or paste them into issues/chat.
+          After saving all three secrets, delete this artifact and this workflow run.
+          EOF
+
+          tar -czf signing-setup.tar.gz signing-setup
+          openssl enc -aes-256-cbc -pbkdf2 -salt \
+            -in signing-setup.tar.gz \
+            -out KynexCut-Signing-Setup.enc \
+            -pass env:BUNDLE_PASSWORD
+          rm -rf signing-setup signing-setup.tar.gz kynexcut-release.jks
+
+      - name: Upload encrypted setup bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: KynexCut-Signing-Setup-Encrypted
+          path: KynexCut-Signing-Setup.enc
+          retention-days: 1
